@@ -1,0 +1,360 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #FF2d2d2d
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+############    MAINBAR BSPWM    ############
+[bar/bar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 25
+offset-x = 0%
+offset-y = 0%
+;radius = 10 
+fixed-center = false
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #f00
+
+border-size = 1
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 2
+
+;font icon
+font-0=Font Awesome 5 Free Solid:size=10;2
+font-1=Font Awesome 5 Free Regular:size=10;2
+font-2=Font Awesome 5 Brands:size=10;2
+;font logo
+;font-3=font\-logos:size=10;2
+;font text
+font-3=IPAGothic:size=10;2
+
+modules-left = launcher bspwm
+modules-center = xwindow
+modules-right = arch_updates filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery date powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = bspwm
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+############    MODULE lAUNCHER    ############
+[module/launcher]
+type=custom/text
+
+content = 
+content-font = 5
+;content-foreground = #1793d1
+content-padding = 3
+;click-left=rofi -no-auto-select -show run
+
+############    MODULE ARCH_UPDATES    ############
+[module/arch_updates]
+type = custom/script
+exec = ~/.config/polybar/modules/arch_updates.sh
+interval = 100
+
+############    MODULE XWINDOW    ############
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+label-foreground= #5B9C6D
+
+############    MODULE XKEYBOAR    ############
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = #b7bb33
+
+label-layout = %layout%
+label-layout-foreground = #d7c797
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+############    MODULE FILESYSTEM    ############
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+format-mounted-prefix = " " 
+format-mounted-prefix-foreground = #58e944
+label-mounted = %percentage_used%%
+label-mounted-foreground = #d7c797
+
+
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+############    MODULE BSPWM    ############
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = true
+enable-click = true
+enable-scroll = false
+reverse-scroll = false
+fuzzy-match = false
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-9 = X;
+ws-icon-default = 
+
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.foreground-alt}
+;label-focused-foreground = #329932
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+############    MODULE XBACKLIGHT    ############
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = #ffad05
+label =  %percentage%%
+label-foreground = #d7c797
+
+############    MODULE BACKLIGHT-ACPI    ############
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+############    MODULE CPU    ############
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #54a7aa
+label = %percentage:2%%
+label-foreground = #d7c797
+
+############    MODULE MEMORY    ############
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = #4a659a
+label = %percentage_used%%
+label-foreground = #d7c797
+
+############    MODULE WLAN    ############
+[module/wlan]
+type = internal/network
+interface = wlp60s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = #2d985a
+label-connected = %essid%
+label-connected-foreground = #d7c797
+
+format-disconnected = ""
+format-disconnected-foreground = ${colors.foreground-alt}
+
+############    MODULE ETH    ############
+[module/eth]
+type = internal/network
+interface = enp59s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = #df1190
+label-connected = %local_ip%
+label-connected-foreground = #d7c797
+
+format-disconnected = ""
+format-disconnected-foreground = ${colors.foreground-alt}
+
+############    MODULE DATE    ############
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #A0522D
+
+label = %date% %time%
+label-foreground = #d7c797
+
+############    MODULE PLUSEAUDIO    ############
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+############    MODULE ALSA    ############
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> 
+format-volume-prefix = " "
+format-volume-prefix-foreground = #4c20d7
+label-volume-foreground = #d7c797
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+
+############    MODULE BATTERY    ############
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP0
+full-at = 98
+
+format-charging-prefix = " " 
+format-discharging-prefix = " "
+format-full-prefix = " "  
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full-prefix-foreground = #167648
+format-discharging-prefix-foreground = #f4c66e
+format-charging-prefix-foreground = #84c17b
+format-full = <label-full>
+
+label-discharging = %percentage%%
+label-charging = %percentage%%
+label-full = %percentage%%
+
+label-full-foreground = #d7c797
+label-charging-foreground = #d7c797
+label-discharging-foreground = #d7c797
+
+animation-charging-foreground = #c5bfb7
+ramp-capacity-foreground = #c5bfb7
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+############    MODULE POWERMENU    ############
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 =  
+menu-0-0-foreground = #008080
+menu-0-0-exec = systemctl reboot
+menu-0-1 =  
+menu-0-1-foreground = #ffa500
+menu-0-1-exec = systemctl poweroff
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+############    MODULE WM    ############
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
