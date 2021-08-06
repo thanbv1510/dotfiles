@@ -1,2 +1,6 @@
 [core]
-	editor = vim
+	editor = nvim
+
+[user]
+	name = thanbv1510
+	email = thanbv1510@gmail.com

@@ -43,10 +43,10 @@ export _JAVA_AWT_WM_NONREPARENTING
 export AWT_TOOLKIT
 
 # Auto run Dropbox
-/usr/bin/dropbox &
+#/usr/bin/dropbox &
 
 # Auto run Ibus Bamboo
-ibus-daemon -rdx
+#ibus-daemon -rdx
 
 # Start BSPWM
 exec bspwm

@@ -1,9 +1,0 @@
-[Default Applications]
-x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
-text/plain=nvim.desktop
-
-[Added Associations]
-text/plain=nvim.desktop;visual-studio-code.desktop;draw.io.desktop;
-application/pdf=wps-office-pdf.desktop;
-application/sql=nvim.desktop;visual-studio-code.desktop;

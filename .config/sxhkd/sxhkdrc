@@ -8,10 +8,11 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show drun -show-icons
 
+# Tab
 super + Tab
-	rofi -show window -show-icons -i -lines 10 -eh 1 -width 50 -padding 50 -opacity "85" -font "Droid Sans 16"
+	rofi -show window -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -134,11 +135,24 @@ XF86AudioRaiseVolume
 	amixer set Master 5%+
 XF86AudioMute
         amixer set Master toggle
+# volume control for GM610 keyboard
+ctrl + shift + F1
+	amixer set Master toggle
+ctrl + shift + F2
+	amixer set Master 5%-
+ctrl + shift + F3
+	amixer set Master 5%+
 
 # brightness control
 XF86MonBrightnessDown
 	xbacklight -dec 5
 XF86MonBrightnessUp
+	xbacklight -inc 5
+
+# brighness control for GM610 Keyboard
+ctrl + shift + F11
+	xbacklight -dec 5
+ctrl + shift + F12
 	xbacklight -inc 5
 
 # Screenshots
