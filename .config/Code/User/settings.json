@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#282c34",
+        "titleBar.activeForeground":"#ffffff",
+        
+        "editorCursor.foreground": "#f19618",
+        "terminalCursor.foreground": "#f19618",
+
+        "statusBar.background" : "#282c34",
+        "statusBar.noFolderBackground" : "#282c34",
+        "statusBar.debuggingBackground": "#282c34"
+    },
+    "window.titleBarStyle": "custom",
+    "workbench.iconTheme": "material-icon-theme",
+}
