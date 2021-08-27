@@ -4,3 +4,12 @@
 [user]
 	name = thanbv1510
 	email = thanbv1510@gmail.com
+[alias]
+	co = checkout
+	cob = checkout -b
+	br = branch
+	brr = branch -r
+	cm = commit
+	st = status
+	p = push
+	l = log

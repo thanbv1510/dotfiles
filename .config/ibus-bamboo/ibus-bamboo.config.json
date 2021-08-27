@@ -165,7 +165,7 @@
   "InputModeShortcut": "126,1",
   "DefaultInputMode": 1,
   "InputModeMapping": {
-    "Navigator:firefoxdeveloperedition": 3,
+    "Navigator:firefoxdeveloperedition": 1,
     "kitty:kitty": 6,
     "obsidian:obsidian": 3,
     "wps:Wps": 6

@@ -1,9 +1,25 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": [
+    "c",
+    "go",
+    "markdown",
+    "typescript",
+    "javascript",
+    "json",
+    "html",
+    "css",
+    "vue"
+  ],
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "gocodeCompletionEnabled": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      }
     }
-  }
+  },
+  "vetur.ignoreProjectWarning": true
 }

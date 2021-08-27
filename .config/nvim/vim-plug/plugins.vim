@@ -14,13 +14,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/NERDTree'
     " Auto pairs for '(' '[' '{'
     Plug 'jiangmiao/auto-pairs'
-
-    " Setup Go language
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-    " Setup theme
+    " Theme
     Plug 'joshdick/onedark.vim'
-
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    " For go language
+    Plug 'fatih/vim-go'
+    " Use release branch (recommend)
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Git
+    Plug 'tpope/vim-fugitive'
+    " css3 syntax highlight
+    Plug 'hail2u/vim-css3-syntax'
+    " Syntax hightlight for .js
+    Plug 'pangloss/vim-javascript'
+    " Syntax hightlight for Vue.js
+    Plug 'posva/vim-vue'
 
 call plug#end()

@@ -31,10 +31,10 @@
 }
 
 #configuration {
-	font:							"RobotoMono Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    drun-display-format:            "{name}";
+	font: 			"Jetbrain Mono 10";
+	show-icons:		true;
+	icon-theme:		"Papirus";
+    	drun-display-format:	"{name}";
 }
 
 #window {

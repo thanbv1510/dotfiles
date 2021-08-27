@@ -2,7 +2,7 @@
 ;background = ${xrdb:color0:#222}
 ;background = #060a0e
 ;background = #1e2226
-background = #282c34
+background = #21252b
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -12,12 +12,13 @@ secondary = #e60053
 alert = #bd2c40
 
 ############    MAINBAR BSPWM    ############
-[bar/bar]
-;monitor = ${env:MONITOR:HDMI-1}
+[bar/top]
+monitor = eDP1
+
 width = 100%
 height = 25
-offset-x = 0%
-offset-y = 0%
+;offset-x = 0%
+;offset-y = 0%
 ;radius = 10 
 fixed-center = false
 bottom = false
@@ -28,25 +29,23 @@ foreground = ${colors.foreground}
 line-size = 1
 line-color = #f00
 
-border-size = 1
-border-color = #00000000
+;border-size = 1
+;border-color = #00000000
 
 padding-left = 1
 padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 ;font icon
 font-0=Font Awesome 5 Free Solid:size=10;2
 font-1=Font Awesome 5 Free Regular:size=10;2
 font-2=Font Awesome 5 Brands:size=10;2
-;font logo
-;font-3=font\-logos:size=10;2
 ;font text
-font-3=IPAGothic:size=10;2
+font-3=JetBrains Mono:size=10;2
 
-modules-left = launcher bspwm
+modules-left = logo bspwm
 modules-center = xwindow
 modules-right = arch_updates filesystem xbacklight alsa xkeyboard memory cpu wlan eth battery date
 
@@ -64,14 +63,37 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+############	EXTRA BAR	#########
+[bar/top_external]
+bottom = false
+monitor = DP3
+
+;font icon
+font-0=Font Awesome 5 Free Solid:size=10;2
+font-1=Font Awesome 5 Free Regular:size=10;2
+font-2=Font Awesome 5 Brands:size=10;2
+;font text
+font-3=JetBrains Mono:size=10;2
+
+fixed-center = false
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-left = logo bspwm
+modules-center = xwindow
+modules-right = memory cpu date
+
+wm-restack = bspwm
+
 ############    MODULE lAUNCHER    ############
-[module/launcher]
+[module/logo]
 type=custom/text
 
-content = 
-content-font = 5
-;content-foreground = #1793d1
-content-padding = 3
+content = 
+;content-font = 8
+content-foreground = #6f4e37
+content-padding = 1
 ;click-left=rofi -no-auto-select -show run
 
 ############    MODULE ARCH_UPDATES    ############
@@ -80,7 +102,7 @@ type = custom/script
 exec = ~/.config/polybar/modules/arch_updates.sh
 interval = 100
 
-############    MODULE XWINDOW    ############
+############    MODULE XWINDOW	############
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -128,36 +150,34 @@ enable-scroll = false
 reverse-scroll = false
 fuzzy-match = false
 
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-8 = IX;
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 6;6
+ws-icon-6 = 7;7
+ws-icon-7 = 8;8
 ws-icon-default = 
-
 
 format = <label-state> <label-mode>
 
 label-focused = %icon%
-label-focused-background = ${colors.foreground-alt}
-;label-focused-foreground = #329932
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-background = #18231e
+label-focused-foreground = #6ccca5
+;label-focused-underline= #c18e5a 
+label-focused-padding = 1
 
 label-occupied = %icon%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
