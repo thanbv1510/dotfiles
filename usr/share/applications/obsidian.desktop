@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/opt/obsidian/Obsidian.AppImage
+Name=Obsidian
+Comment=Obsidian
+Icon=/opt/obsidian/obsidian-icon-light.png
