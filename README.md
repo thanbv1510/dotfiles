@@ -5,7 +5,7 @@
 |         Syntax          |                Description                    |
 | ----------------------- | --------------------------------------------- |
 | supper + space          | Search application                            |
-| supper + enter          | Exec terminal (Terminator)                    |
+| supper + enter          | Exec terminal                                 |
 | super + ctl + space     | Change keyboard layout                        |
 | super + backspace       | Lock screen (i3lock)                          |
 | super + number          | Switch workspace                              |
