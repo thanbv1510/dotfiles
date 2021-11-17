@@ -19,6 +19,7 @@ font:
 
 env:
   TERM: xterm-256color
+  WINIT_X11_SCALE_FACTOR: '1.0'
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
@@ -68,7 +69,7 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
 
 # If this is `true`, the cursor is temporarily hidden when typing.
 hide_when_typing: true

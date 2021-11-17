@@ -14,5 +14,3 @@ my_laptop_external_monitor=$(xrandr --query | grep 'DP3')
 if [[ $my_laptop_external_monitor = *connected* ]]; then
     polybar -rq top_external &
 fi
-
-

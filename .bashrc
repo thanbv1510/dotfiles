@@ -12,8 +12,8 @@ git_branch() {
 }
 export PS1="[\033[00;31m\]\u@\h\[\033[00m\] \033[00;34m\]\W\[\033[00m\]]\[\033[00;32m\]\$(git_branch)\[\033[00m\]\$ "
 
-export TERM=xterm-88color
+export TERM=xterm-256color
 
-export GOROOT=/usr/local/go
-export GOPATH=/usr/local/go/packages
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+alias vi='nvim'
+alias vim='nvim'
+alias sudo='sudo '

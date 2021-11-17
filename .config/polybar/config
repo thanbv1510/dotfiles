@@ -90,9 +90,9 @@ wm-restack = bspwm
 [module/logo]
 type=custom/text
 
-content = 
+content = 
 ;content-font = 8
-content-foreground = #6f4e37
+content-foreground = #fff
 content-padding = 1
 ;click-left=rofi -no-auto-select -show run
 
@@ -105,7 +105,7 @@ interval = 100
 ############    MODULE XWINDOW	############
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label =  %title:0:30:...%
 label-foreground= #5B9C6D
 
 ############    MODULE XKEYBOAR    ############
@@ -349,3 +349,4 @@ margin-top = 5
 margin-bottom = 5
 
 ; vim:ft=dosini
+

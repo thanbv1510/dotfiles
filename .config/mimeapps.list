@@ -1,9 +1,0 @@
-[Added Associations]
-application/vnd.openxmlformats-officedocument.presentationml.presentation=freeoffice-presentations.desktop;wps-office-wpp.desktop;
-application/pdf=wps-office-pdf.desktop;libreoffice-draw.desktop;org.pwmt.zathura.desktop;
-application/vnd.openxmlformats-officedocument.wordprocessingml.document=freeoffice-textmaker.desktop;firefox-developer-edition.desktop;
-text/html=google-chrome.desktop;
-
-[Default Applications]
-x-scheme-handler/postman=Postman.desktop
-x-scheme-handler/obsidian=obsidian.desktop

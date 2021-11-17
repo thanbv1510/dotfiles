@@ -1,0 +1,34 @@
+#! /bin/sh
+
+internal_monitor=eDP1
+external_monitor=DP3
+
+monitor_add() {
+	for desktop in $(bspc query -D --names -m $internal_monitor)
+  	do
+		if [[ $desktop == 5 || $desktop == 6 || $desktop == 7 || $desktop == 8 ]]; then
+			bspc desktop $desktop --to-monitor $external_monitor
+  			bspc desktop Desktop --remove
+		fi	
+  	done
+}
+
+monitor_remove() {
+	# Now move everything back to internal monitor
+	# Temp desktop because one desktop required per monitor
+	bspc monitor $external_monitor -a Desktop 
+
+	for desktop in $(bspc query -D -m $external_monitor)
+	do
+		bspc desktop $desktop --to-monitor $internal_monitor
+	done
+
+	bspc desktop Desktop --remove # Remove temp desktops
+}
+
+if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
+    monitor_add
+else
+    monitor_remove
+fi
+
