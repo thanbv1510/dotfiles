@@ -10,6 +10,16 @@
 	br = branch
 	brr = branch -r
 	cm = commit
+	cmm = commit -m
+	cma = commit --amend
+	cmam = commit --amend -m
+	cmane = commit --amend --no-edit
 	st = status
 	p = push
+	pf = push -f
 	l = log
+	lg = "!sh -c 'if [ $0 = sh ]; then git log --oneline; else git log --oneline -$0; fi'"
+	lgg = log --oneline --graph
+	rs = reset
+	rss = reset --soft
+	rsh = reset --hard
